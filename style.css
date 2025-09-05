@@ -1,0 +1,66 @@
+.calc{
+    margin: 50px auto;
+    width: 300px;
+    height: 500px;
+    box-shadow: -5px 5px 8px 0px rgba(0, 0, 0, 0.3);
+    background: rgba(50, 50, 50, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family:Roboto, sans-serif;
+    padding: 10px;
+    font-size: 48px;
+    font-weight: 400;
+    text-align: left;
+}
+.btn{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+.btn:hover{
+    filter:brightness(90%)
+}
+.blue-bg{
+    box-shadow: inset -3px 4px 18px 0px rgba(0, 0, 0, 0.2);
+    background: rgba(116, 235, 213, 1);
+}
+.grey-bg{
+    box-shadow: inset -3px 4px 18px 0px rgba(0, 0, 0, 0.2);
+    background: rgba(248, 248, 248, 1);
+    color: rgba(50, 50, 50, 1);
+}
+.buttons{
+    display: grid;
+    grid-template-areas:
+    "ac division persentage multiplication"
+    "seven eight nine minus-plus"
+    "four five six minus"
+    "one two three plus"
+    "dot zero delete equal";
+    grid-gap: 5px;
+    justify-items: center;
+}
+.screen{
+    height: 125px;
+    padding: 10px;
+    display: grid;
+    justify-items: end;
+    align-items: end;
+    margin-bottom: 20px;
+}
+.screen p{
+    text-align: right;
+    font-size: 50px;
+    margin: 0;
+}
+.line{
+    border: 0.5px solid rgba(116, 235, 213, 1);
+    width: 275px;
+    margin: auto;
+    transform: rotate(-180.00deg);
+    margin-bottom: 10px;
+}
