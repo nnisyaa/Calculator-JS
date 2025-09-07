@@ -22,14 +22,54 @@ document.querySelector('.buttons').onclick = (event)=>{
     out.textContent = '';
     const key = event.target.textContent;
     if(digit.includes(key)){
-        a+= key;
-        console.log(a, b, sign);
-        out.textContent = a;
+        if (b==='' && sign===''){
+            a+= key;
+            out.textContent = a;
+        }
+        else if(a!=='' && b!=='' && finish){
+            b = key;
+            finish = false;
+            out.textContent = b;
+        }
+        else{
+            b += key;
+            out.textContent = b;
+        }
+        console.log(a, sign, b);
+        return;
     }
     if(action.includes(key)){
         sign = key;
         out.textContent = sign;
-        console.log(a, b, sign);
+        console.log(a, sign, b);
         return;
+    }
+
+    if(key === '='){
+        if(b === '') b = a;
+        switch(sign){
+            case '+':
+                a = ((+a) + (+b));
+                break;
+            case '-':
+                a = a - b;
+                break;
+            case 'x':
+                a = a * b;
+                break;
+            case '/':
+                if(b === '0'){
+                    out.textContent = "error"
+                    a = '';
+                    b = '';
+                    sign = '';
+                    return;
+                }
+                a = a / b;
+                break;
+        }
+        finish = true;
+        out.textContent = a;
+        console.log()
     }
 }
